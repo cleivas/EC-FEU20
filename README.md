@@ -1,2 +1,2 @@
 # EC-FEU20
-JS examples for EC-FEU20
+Vanilla JS samples
