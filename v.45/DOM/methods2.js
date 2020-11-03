@@ -32,3 +32,5 @@ let newHeading = document.createElement('h2');
 newHeading.innerText = 'En ny heading!';
 let bodyElementet = document.querySelector('body');
 bodyElementet.appendChild(newHeading);
+
+newHeading.setAttribute('class', 'ny-klass');
