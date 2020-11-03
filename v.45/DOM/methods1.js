@@ -11,6 +11,7 @@ console.log(rubrik.textContent);
 let firstItem = document.querySelector('.list-group-item');
 firstItem.innerText = 'Matrix';
 // console.log(firstItem);
+firstItem.style.border = '3px solid lightblue';
 
 
 //Ändra bakgrundsfärg på andra elementet i listan
@@ -20,3 +21,4 @@ let listElements = document.querySelectorAll('.list-group-item');
 
 listElements[1].style.backgroundColor = 'red';
 listElements[1].style.color = 'white';
+
