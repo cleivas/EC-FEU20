@@ -1,12 +1,17 @@
-//mouse click
+/* //mouse click
 
+//Elementet vi vill använda 
 let button = document.querySelector('button');
+
+//vi sätter en eventlyssnare på elementet av typen 'click'.
+//Alltså, vi lyssnar efter ett click.
 button.addEventListener('click',
+    //Den här funktionen körs varje gång vi har ett klick på vårat ellement
     function(event){
         console.log('Klick på första knappen');
     }
 );
-
+ */
 
 /* //Mouse move 
 let secondProduct = document.querySelector('.art-2');
@@ -26,6 +31,7 @@ secondProduct.addEventListener('mousemove',
 
 
 /* //mouse event -> enter and leave 
+//Elementet vi vill använda 
 let btn = document.querySelector('button');
 let firstProduct = document.querySelector('.art-1');
 
