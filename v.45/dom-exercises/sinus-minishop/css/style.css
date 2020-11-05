@@ -2,6 +2,10 @@
     --width: 1000px;
 }
 
+.bg-blue{
+    background-color: blue;
+}
+
 body {
     margin: 0;
     height: 100vh;
