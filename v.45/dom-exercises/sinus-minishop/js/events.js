@@ -1,3 +1,27 @@
+//Event listener for keydown
+
+//Elementet vi vill använda för eventlyssnaren
+let htmlElement = document.querySelector('html');
+
+//Lägger vi till eventlyssnaren
+htmlElement.addEventListener('keydown',
+    function(event){
+        console.log(event.key);
+
+        //elementet vi vill ändra bakgrundsfärg på
+        let art1 = document.querySelector('.art-1');
+
+        if(event.key == 'b' || event.key == 'B'){
+            art1.style.backgroundColor = 'blue';
+        } else if( event.key == 'r' || event.key == 'R'){
+            art1.style.backgroundColor = 'red';
+        } else if(event.key === 'Alt'){
+            art1.style.backgroundColor = 'hotpink';
+        }
+
+    }
+);
+
 /* //mouse click
 
 //Elementet vi vill använda 
@@ -11,7 +35,7 @@ button.addEventListener('click',
         console.log('Klick på första knappen');
     }
 );
- */
+*/
 
 /* //Mouse move 
 let secondProduct = document.querySelector('.art-2');
