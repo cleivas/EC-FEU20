@@ -17,6 +17,12 @@ htmlElement.addEventListener('keydown',
             art1.style.backgroundColor = 'red';
         } else if(event.key === 'Alt'){
             art1.style.backgroundColor = 'hotpink';
+        } else if(event.key === 'i' || event.key === 'I'){
+            //Ändra bild 
+            //första img elementet
+            let img = this.querySelector('.art-1 img');
+            img.src = 'img/hoodie-fire.png';
+            console.log(img);
         }
 
     }
