@@ -1,4 +1,30 @@
-/* let lastProduct = document.querySelector('.art-3');
+//#12
+let menyElement = document.querySelectorAll('#header-navigation a');
+let nyttMenyElement = document.createElement('a');
+nyttMenyElement.innerText = 'nytt element';
+nyttMenyElement.href = '#';
+//nyttMenyElement.setAttribute('href', '#');
+
+menyElement[2].insertAdjacentElement('afterend', nyttMenyElement);
+
+console.log(menyElement);
+
+
+
+
+/* 
+//classList, add() / remove()
+let firstImg = document.querySelector('img');
+
+firstImg.classList.remove('logo');
+firstImg.classList.add('second-random-class');
+
+console.log( firstImg.classList); */
+
+
+/* 
+//13
+let lastProduct = document.querySelector('.art-3');
 
 lastProduct.insertAdjacentHTML('afterend', 
 `<article class="art-4">
@@ -24,7 +50,3 @@ forrestP.insertAdjacentElement('beforebegin', newHeading);
 console.log(forrestP);
  */
 
-let headerNavigation = document.querySelector('#header-navigation');
-headerNavigation.children[2].text = 'Mail us';
-
-console.log(headerNavigation.children[2]);
