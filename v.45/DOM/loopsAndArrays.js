@@ -28,3 +28,27 @@ for(let i=0; i<liElements.length; i++){
     hue+=hueStep;
     liElements[i].style.backgroundColor = `hsl(${hue}, 70%, 80%)`;
 }
+
+let body = document.querySelector('body');
+let bodyElements = body.children;
+
+//Skapa nytt ul element och lägg till som child till body elementet
+let newUl = document.createElement('ul');
+body.appendChild(newUl);
+
+for(let i=0; i<10; i++){
+    let listItem = document.createElement('li');
+    listItem.setAttribute('class', 'list-group-item');
+    newUl.appendChild(listItem);
+}
+
+let newLis = newUl.children;
+
+ for(let i=0; i<newLis.length; i++){
+   newLis[i].style.backgroundColor = 'red';
+} 
+
+console.log(newUl);
+console.log(newLis);
+
+//setAttribute('id', 'namn-pa-id')
