@@ -12,7 +12,6 @@ handla().then(lagaMat).catch(
 );
 duka();
 
-
 function handla(){
     console.log('Frida sticker och handlar');
 
