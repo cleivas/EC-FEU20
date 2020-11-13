@@ -23,7 +23,7 @@ fetch(url).then(
     function(data){
         console.log(data[0]);
 
-/*         let description = data[0].description; //string
+        let description = data[0].description; //string
         let foodPairing = data[0].food_pairing; //array
 
         let p = document.querySelector('p');
@@ -36,7 +36,7 @@ fetch(url).then(
             let li = document.createElement('li');
             li.innerText = foodPairing[i];
             ul.appendChild(li);
-        } */
+        }
     }
 
 ).catch(
