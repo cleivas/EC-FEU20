@@ -25,17 +25,20 @@ fetch(url).then(
     }
 ).then(
     function(data){
-        console.log(data[0].flag);
+        //hämtar den datan vi behöver
         const name = data[0].nativeName;
         const population = data[0].population;
         const timezone = data[0].timezones[0];
         const flagUrl = data[0].flag;
 
-        presentData(name);
+        //kallar på funktionen som skapar alla element
+        //Och skickar över den datan som ska presenteras i elementen
+        presentData(name, population, timezone, flagUrl);
     }
 );
 
-function presentData(n){
+//skapa alla element, lägg till till DOMen och ge dom rätt värde
+function presentData(n, p, t, f){
     let body = document.querySelector('body');
     let ul = document.createElement('ul');
     body.appendChild(ul);
@@ -51,4 +54,7 @@ function presentData(n){
     body.appendChild(flagImg);
 
     nameLi.innerText = n;
+    populationLi.innerText = p;
+    timeZoneLi.innerText = t;
+    flagImg.src = f;
 }
