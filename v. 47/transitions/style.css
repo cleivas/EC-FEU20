@@ -1,0 +1,9 @@
+#main{
+    border: solid lightgray 1px;
+    height: 200px;
+    transition: background-color 1s, height 1s;
+}
+
+.blue{
+    background-color: blue;
+}
