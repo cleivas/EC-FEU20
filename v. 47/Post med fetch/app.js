@@ -15,12 +15,10 @@ postForm.addEventListener('submit',
         //Hämta textinnehållet från title text-inputen
         let titleInput = document.querySelector('#title');
         const titleText = titleInput.value;
-        // console.log(titleText);
 
         //Hämta textinnehållet från body text-inputen
         let bodyInput = document.querySelector('#body');
         const bodyText = bodyInput.value;
-        // console.log(bodyText);
 
         //Det nya inlägget som vi vill posta
         //med textinnehållet från våra text-inputs
@@ -29,8 +27,7 @@ postForm.addEventListener('submit',
             title: titleText,
             body: bodyText,
         };
-        console.log(myPost);
-        
+
         const url = 'https://jsonplaceholder.typicode.com/posts';
 
         //Andra argumentet i fetch-metoden. 
