@@ -7,38 +7,58 @@ För att göra en post request kommer vi behöva
     objektet kommer innehålla metod, header och body.
 */
 
+let postForm = document.querySelector('#post-form');
+postForm.addEventListener('submit',
+    function(event){
+        event.preventDefault();
 
-const url = 'https://jsonplaceholder.typicode.com/posts';
+        //Hämta textinnehållet från title text-inputen
+        let titleInput = document.querySelector('#title');
+        const titleText = titleInput.value;
+        // console.log(titleText);
 
-//Det nya inlägget som vi vill posta
-const myPost = {
-    userId: 33,
-    title: 'Dag 46',
-    body: 'Jag har inte sett land på 46 dagar',
-};
+        //Hämta textinnehållet från body text-inputen
+        let bodyInput = document.querySelector('#body');
+        const bodyText = bodyInput.value;
+        // console.log(bodyText);
 
-//Andra argumentet i fetch-metoden. 
-//Ett object som innehåller inställningar för våran request
-const init = {
-    method: 'POST', //metoden vi vill använda. Default är GET
-    headers: {
-        'Content-Type': 'application/json' //I vilket format datan vi skickar är
-    },
+        //Det nya inlägget som vi vill posta
+        //med textinnehållet från våra text-inputs
+        const myPost = {
+            userId: 33,
+            title: titleText,
+            body: bodyText,
+        };
+        console.log(myPost);
+        
+        const url = 'https://jsonplaceholder.typicode.com/posts';
 
-    body: JSON.stringify(myPost) //Gör om JS objektet till en string i json-format
-};
+        //Andra argumentet i fetch-metoden. 
+        //Ett object som innehåller inställningar för våran request
+        const init = {
+            method: 'POST', //metoden vi vill använda. Default är GET
+            headers: {
+                'Content-Type': 'application/json' //I vilket format datan vi skickar är
+            },
 
-// console.log(init.body);
+            body: JSON.stringify(myPost) //Gör om JS objektet till en string i json-format
+        };
 
-//Nu använder vi två argument i fetch-metoden
-fetch(url, init).then(
-    function(response){
-        //Har allt gått bra kommer vi få statuskod 201, 'Created'
-        console.log(response);
-        return response.json();
-    }
-).then(
-    function(data){
-        console.log(data);
+
+        //Nu använder vi två argument i fetch-metoden
+        fetch(url, init).then(
+            function(response){
+                //Har allt gått bra kommer vi få statuskod 201, 'Created'
+                console.log(response);
+                return response.json();
+            }
+        ).then(
+            function(data){
+                console.log(data);
+            }
+        )
+
     }
 )
+
+
