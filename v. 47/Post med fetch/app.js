@@ -19,6 +19,7 @@ postForm.addEventListener('submit',
         //Hämta textinnehållet från body text-inputen
         let bodyInput = document.querySelector('#body');
         const bodyText = bodyInput.value;
+        bodyInput.value = '';
 
         //Det nya inlägget som vi vill posta
         //med textinnehållet från våra text-inputs
