@@ -18,7 +18,6 @@ let btn = document.querySelector('button');
 btn.addEventListener('click',
     function(){
 
-
         //Roll the dice
         for(d of dice){
             d.roll();
