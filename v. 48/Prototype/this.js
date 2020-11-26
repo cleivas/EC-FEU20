@@ -15,15 +15,16 @@ obj.present();
 
 
 //In a constructor 'this' is a placeholder for the to be created object 
-
 function Obj(){
     this.name = 'Mamoun';
     this.age = 27;
 }
 
+//'this' is a placeholder for any object instance we have created using the Obj constructor
 Obj.prototype.present = function(){
     console.log(this.name, this.age);
 }
 
 let objOfObj = new Obj();
 console.log(objOfObj.name);
+objOfObj.present();
