@@ -1,4 +1,61 @@
 //Skriv tärningskoden här
+//Tärningsmallen
+function Die(){
+    //Alla unika egenskaper finns här
+    this.value = 0;
+}
+//Alla metoder och egenskaper som är samma för alla är prototype ...
+Die.prototype.sides = 6;
+Die.prototype.roll = function(){
+    this.value = Math.ceil(Math.random()*this.sides);
+}
+//antal tärningar
+const nmbOfDice = 5;
+
+//Skapa alla tärningsobjekt
+let dice = [];
+for(let i=0; i<nmbOfDice; i++){
+    dice.push(new Die());
+}
+//kastar vi alla tärningar 
+for(d of dice){
+    d.roll();
+}
+
+let rollsLeft = 20;
+let score = 0;
+
+//Hämta knappen och sätta en eventlistener på den
+let btn = document.querySelector('button');
+btn.addEventListener('click', function(event){
+    for(d of dice){
+        d.roll();
+        score += d.value;
+    }
+
+    let h1 = document.querySelector('h1');
+    h1.innerText = `Score: ${score}`;
+
+    for(let i=0; i<nmbOfDice; i++){
+        //Hämta article element i turordning
+        let dEl = document.querySelector(`#die${i+1}`);
+
+        dEl.classList = '';
+        dEl.classList.add('dice', `dice-${dice[i].value}`)
+    }
+
+    rollsLeft--;
+    btn.innerText = `Kasta (${rollsLeft})`;
+
+    if(rollsLeft === 0){
+        alert(`Game is over. Final score: ${score}`);
+        score = 0;
+        rollsLeft=20;
+        h1.innerText = `Score: ${score}`;
+    }
+
+});
+
 
 
 
