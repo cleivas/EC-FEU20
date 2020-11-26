@@ -16,6 +16,7 @@ Animal.prototype.makeSound = function(){
 let cat = new Animal('mjau');
 let wolf = new Animal('aaaoooouuuuu');
 let elephant = new Animal('tuuut tuuut');
+
 console.log(cat, wolf);
 
 cat.makeSound();
