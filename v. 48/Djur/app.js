@@ -5,6 +5,9 @@ function Animal(_sound){
     //this.legs = 4; moved to an instance property
     //this.tail = true;
     this.sound = _sound;
+    this.something = 2;
+    
+    console.log(this.something);
 }
 
 Animal.prototype.legs = 4;
