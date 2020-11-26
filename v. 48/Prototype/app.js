@@ -13,14 +13,14 @@ console.log(arr); //Om man kollar under prototype hittar man alla instance-metod
 console.log(typeof arr); //instans av det globala Array-objektet, är ett objekt
 
 console.log(arr.push(10)); //vi kan använda alla instance-metoder på alla våra arrayer
-console.log(Array.push(10)); //Fungerar inte eftersom push är en instance-metod, inte en statisk metod. Går alltså inte att använda på det globala Array-objektet 
+try{
+    console.log(Array.push(10));
+}catch(e){
+    console.log(e);
+}
+ //Fungerar inte eftersom push är en instance-metod, inte en statisk metod. Går alltså inte att använda på det globala Array-objektet 
 
-let arr2 = [9, 8, 7, 6];
-console.log(arr2, arr);
-
-
-
-
+//För att se likheten mellan objekt och funktioner som vi skriver och JS 'inbyggda' objekt och funktioner. 
 /* let math = {
     PI: 3.14,
 
