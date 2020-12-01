@@ -1,4 +1,4 @@
-const KEY = '7de19ea685a26c8bf3919c9a33e155f8';
+const KEY = '';
 let searchText = 'animal';
 
 const url = `https://www.flickr.com/services/rest/?api_key=${KEY}&method=flickr.photos.search&text=${searchText}&format=json&nojsoncallback=1&per_page=1&page=10`;
