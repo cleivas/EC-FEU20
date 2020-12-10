@@ -9,24 +9,40 @@ MAllen har en metod som heter display som kommer visa bilden på hunden
 Med fetch kommer vi hämta url och skapa ett objekt med constructorn
 */
 
-const URL = 'https://dog.ceo/api/breeds/image/random';
+const URL = 'https://dog.ceo/api/breeds/image/rando';
 
 fetch(URL).then(
     // response => response.json()
         function(response){
-            return response.json();
+            console.log(response.status);
+            if(response.status === 404){
+                throw 'Not found';
+            }
+            else{
+                return response.json();
+            }
         }
     ).then(
         function(data){
+            // console.log(data);
+            // console.log(data.message);
+
             let hund = new Dog(data.message);
             hund.display();
-            console.log(hund);
+            // console.log(hund);
+        }
+    ).catch(
+        function(error){
+            if(error === 'Not found'){
+                console.log('Det hittades inte');
+            }
+            
         }
     )
 
 
 
-//Hundmallen
+//Hundmallen start
 function Dog(_url){
     this.url = _url;
 }
@@ -38,4 +54,4 @@ Dog.prototype.display = function(){
 
     body.appendChild(img);
 }
-
+//Hundmallen slut
